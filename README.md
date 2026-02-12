@@ -1,6 +1,6 @@
 # Azure DevOps Demo Project
 
-This repository demonstrates comprehensive Azure DevOps capabilities including CI/CD pipelines, Infrastructure as Code, containerization, and Kubernetes orchestration.
+This repository demonstrates comprehensive Azure DevOps capabilities including CI/CD pipelines, Infrastructure as Code, containerization, and Kubernetes orchestration. PPR
 
 ## Project Overview
 
