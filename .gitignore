@@ -1,0 +1,35 @@
+# Ignore common development, build, and deployment files
+
+# .NET
+bin/
+obj/
+
+# Node.js
+node_modules/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.pyc
+
+# pytest
+.pytest_cache/
+
+# Reports and build artifacts
+coverage/
+dist/
+build/
+*.egg-info/
