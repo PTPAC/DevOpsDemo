@@ -13,14 +13,16 @@ variables:
   phpVersion: 8.1
 
 steps:
-- script: |
-    sudo update-alternatives --set php /usr/bin/php$(phpVersion)
-    sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
-    sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
-    sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
-    sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
-    php -version
-  displayName: 'Use PHP version $(phpVersion)'
-
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'FTP://ftp.ptpac.pt'
+    username: 'devops@ptpac.pt'
+    password: 'DeV1.430-as3!22'
+    rootDirectory: '/src'
+    filePatterns: '**'
+    remoteDirectory: '/src'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: true
