@@ -18,6 +18,8 @@ steps:
     connection: 'PTPAC'
     userRepository: 'DevOpsDemo'
     downloadPath: '$(System.DefaultWorkingDirectory)'
+    defaultVersionType: 'Latest Release'
+    
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
