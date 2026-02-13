@@ -18,14 +18,14 @@ steps:
     connection: 'PTPAC'
     userRepository: 'DevOpsDemo'
     defaultVersionType: 'latest'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    downloadPath: '$(System.DefaultWorkingDirectory)'
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
     serverUrl: 'FTP://$(ftpLink)'
     username: '$(ftpUser)'
     password: '$(ftpPassword)'
-    rootDirectory: 'src'
+    rootDirectory: '$(System.DefaultWorkingDirectory)/src'
     filePatterns: '**'
     remoteDirectory: 'src'
     clean: false
