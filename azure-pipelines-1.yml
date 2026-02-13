@@ -13,16 +13,10 @@ variables:
   phpVersion: 8.1
 
 steps:
-- task: FtpUpload@2
+- task: FTPUploader@1
   inputs:
-    credentialsOption: 'inputs'
-    serverUrl: 'FTP://$(ftpLink)'
+    sourcePath: '/src'
+    serverName: 'FTP://$(ftpLink)'
     username: '$(ftpUser)'
     password: '$(ftpPassword)'
-    rootDirectory: '$(System.ArtifactsDirectory)/src'
-    filePatterns: '**'
-    remoteDirectory: 'src'
-    clean: false
-    cleanContents: false
-    preservePaths: false
-    trustSSL: true
+    remotePath: '/src'
