@@ -20,7 +20,7 @@ steps:
     serverUrl: 'FTP://$(ftpLink)'
     username: '$(ftpUser)'
     password: '$(ftpPassword)'
-    rootDirectory: '_PTPAC_DevOpsDemo/src'
+    rootDirectory: 'src'
     filePatterns: '**'
     remoteDirectory: 'src'
     clean: false
