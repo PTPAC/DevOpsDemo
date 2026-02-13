@@ -17,16 +17,3 @@ steps:
 - task: gitsync@1
   inputs:
     GitRepoUrl: 'https://github.com/PTPAC/DevOpsDemo.git'
-- task: FtpUpload@2
-  inputs:
-    credentialsOption: 'inputs'
-    serverUrl: 'FTP://$(ftpLink)'
-    username: '$(ftpUser)'
-    password: '$(ftpPassword)'
-    rootDirectory: 'src'
-    filePatterns: '**'
-    remoteDirectory: 'src'
-    clean: false
-    cleanContents: false
-    preservePaths: false
-    trustSSL: true
