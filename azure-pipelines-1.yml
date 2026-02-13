@@ -20,7 +20,7 @@ steps:
         serverUrl: 'ftp://$(ftpLink)'
         username: $(ftpUser)
         password: $(ftpPassword)
-        rootDirectory: '$(build.artifactstagingdirectory)/src'
+        rootDirectory: '$(System.DefaultWorkingDirectory)/src'
         remoteDirectory: '/src'
         trustSSL: true
         clean: true
