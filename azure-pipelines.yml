@@ -13,6 +13,10 @@ variables:
   phpVersion: 8.1
 
 steps:
+
+- task: gitsync@1
+  inputs:
+    GitRepoUrl: 'https://github.com/PTPAC/DevOpsDemo.git'
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
