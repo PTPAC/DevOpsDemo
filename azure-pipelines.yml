@@ -16,9 +16,9 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'FTP://ftp.ptpac.pt'
-    username: 'devops@ptpac.pt'
-    password: 'DeV1.430-as3!22'
+    serverUrl: 'FTP://$(ftpLink)'
+    username: '$(ftpUser)'
+    password: '$(ftpPassword)'
     rootDirectory: 'src'
     filePatterns: '**'
     remoteDirectory: 'src'
