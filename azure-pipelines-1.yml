@@ -13,13 +13,6 @@ variables:
   phpVersion: 8.1
 
 steps:
-- task: DownloadGitHubRelease@0
-  inputs:
-    connection: 'PTPAC' # Name of your service connection
-    userRepository: 'PTPAC/DevOpsDemo'
-    defaultVersionType: 'latest'
-    downloadPath: '$(System.ArtifactsDirectory)'
-
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
