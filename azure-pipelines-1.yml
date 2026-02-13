@@ -15,19 +15,18 @@ variables:
 steps:
 - task: DownloadGitHubRelease@0
   inputs:
-    connection: 'PTPAC'
-    userRepository: 'DevOpsDemo'
-    downloadPath: '$(System.DefaultWorkingDirectory)'
+    connection: 'PTPAC' # Name of your service connection
+    userRepository: 'PTPAC/DevOpsDemo'
     defaultVersionType: 'latest'
-    version: ''
-    
+    downloadPath: '$(System.ArtifactsDirectory)'
+
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
     serverUrl: 'FTP://$(ftpLink)'
     username: '$(ftpUser)'
     password: '$(ftpPassword)'
-    rootDirectory: '$(System.DefaultWorkingDirectory)/src'
+    rootDirectory: '$(System.ArtifactsDirectory)/src'
     filePatterns: '**'
     remoteDirectory: 'src'
     clean: false
