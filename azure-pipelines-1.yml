@@ -13,14 +13,19 @@ variables:
   phpVersion: 8.1
 
 steps:
-
+- task: DownloadGitHubRelease@0
+  inputs:
+    connection: 'PTPAC'
+    userRepository: 'DevOpsDemo'
+    defaultVersionType: 'latest'
+    downloadPath: '$(System.ArtifactsDirectory)'
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
     serverUrl: 'FTP://$(ftpLink)'
     username: '$(ftpUser)'
     password: '$(ftpPassword)'
-    rootDirectory: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/src'
+    rootDirectory: 'src'
     filePatterns: '**'
     remoteDirectory: 'src'
     clean: false
