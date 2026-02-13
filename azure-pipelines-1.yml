@@ -13,10 +13,15 @@ variables:
   phpVersion: 8.1
 
 steps:
-- task: FTPUploader@1
-  inputs:
-    sourcePath: '/src'
-    serverName: 'FTP://$(ftpLink)'
-    username: '$(ftpUser)'
-    password: '$(ftpPassword)'
-    remotePath: '/src'
+
+  - task: FtpUpload@2
+    inputs:
+        credentialsOption: inputs
+        serverUrl: 'ftp://$(ftpLink)'
+        username: $(ftpUser)
+        password: $(ftpPassword)
+        rootDirectory: '$(build.artifactstagingdirectory)/src'
+        remoteDirectory: '/src'
+        trustSSL: true
+        clean: true
+        preservePaths: true
