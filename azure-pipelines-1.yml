@@ -13,6 +13,7 @@ variables:
   phpVersion: 8.1
 
 steps:
+
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
