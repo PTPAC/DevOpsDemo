@@ -19,7 +19,6 @@ steps:
     userRepository: 'DevOpsDemo'
     downloadPath: '$(System.DefaultWorkingDirectory)'
     defaultVersionType: 'latest'
-    version: 'Latest Release'
     
 - task: FtpUpload@2
   inputs:
